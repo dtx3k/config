@@ -36,7 +36,7 @@ esphome/**/
 aircast.xml
 airsonos.xml
 notebooks
-
+mind.conf
 # Ignore files created by IDE's
 .vscode
 .theia
