@@ -1,0 +1,5 @@
+woonkamer:
+  name: Woonkamer
+  entities:
+    - light.cilinder_lamp
+    - light.staande_lampen

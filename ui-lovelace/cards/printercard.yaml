@@ -1,0 +1,24 @@
+entities:
+  - entity: sensor.cnlbp621c
+  - entity: sensor.cnlbp621c_canon_cartridge_054_black_toner
+    style: |
+        :host {
+        --paper-item-icon-color: rgba(0, 0, 0, 0.4)
+        }
+  - entity: sensor.cnlbp621c_canon_cartridge_054_cyan_toner
+    style: |
+        :host {
+        --paper-item-icon-color: rgba(51,255,255,0.6)
+        }
+  - entity: sensor.cnlbp621c_canon_cartridge_054_magenta_to
+    style: |
+        :host {
+        --paper-item-icon-color: rgba(255,0,255,0.6)
+        }
+  - entity: sensor.cnlbp621c_canon_cartridge_054_yellow_ton
+    style: |
+        :host {
+        --paper-item-icon-color: rgba(255,255,0,0.6)
+        }
+title: Printer
+type: glance

@@ -1,0 +1,38 @@
+# Basic Config
+esphome:
+  name: shelly_overloop
+  platform: ESP8266
+  board: esp01_1m
+
+wifi:
+  ssid: !secret ssid1
+  password: !secret ssid1_pass
+
+logger:
+api:
+ota:
+
+# Device Specific Config
+output:
+  - platform: gpio
+    pin: GPIO4
+    id: shelly_1_relay
+
+light:
+  - platform: binary
+    name: "Overloop Lamp"
+    output: shelly_1_relay
+    id: lightid
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO5
+      #mode: INPUT_PULLUP
+      #inverted: True
+    name: "Overloop Schakelaar"
+    on_state:
+      then:
+        - light.toggle: lightid
+    internal: true
+    id: switchid

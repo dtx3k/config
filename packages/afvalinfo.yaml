@@ -1,0 +1,28 @@
+#sensor:
+#    - platform: afvalinfo
+#      resources:
+##       - papier
+#        - pbd
+#        - gft
+#        - trash_type_today
+#        - trash_type_tomorrow
+#      location: hengelo
+#      postcode: 7559cc
+#      streetnumber: 30
+#      locale: 'nl'
+#      timespanindays: 365
+sensor:
+  - platform: afvalinfo
+    resources:
+      - gft
+      - pbd
+      - papier
+      - restafval
+      - trash_type_today
+      - trash_type_tomorrow
+    location: !secret afvalinfo_city
+    postcode: !secret afvalinfo_postalcode
+    streetnumber: !secret afvalinfo_number
+    dateformat: '%d-%m-%Y'
+    locale: 'nl'
+    timespanindays: 365

@@ -1,0 +1,34 @@
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: picture-entity
+        entity: sensor.afvalinfo_today
+        name: Vandaag
+        state_image:
+          'gft': /local/images/trash_card/GFT.png
+          'papier': /local/images/trash_card/papier.png
+          'restafval': /local/images/trash_card/Restafval.png
+          'pbd': /local/images/trash_card/pmd.png
+          'none': /local/images/trash_card/geen.png
+      - type: picture-entity
+        entity: sensor.afvalinfo_tomorrow
+        name: Morgen
+        state_image:
+          'gft': /local/images/trash_card/GFT.png
+          'papier': /local/images/trash_card/papier.png
+          'restafval': /local/images/trash_card/Restafval.png
+          'pbd': /local/images/trash_card/pmd.png
+          "none": /local/images/trash_card/geen.png
+
+  - type: glance
+    entities:
+      - entity: sensor.afvalinfo_gft
+        icon: mdi:fruit-citrus
+        name: GFT
+      - entity: sensor.afvalinfo_papier
+        icon: mdi:package-variant
+        name: Papier
+      - entity: sensor.afvalinfo_pbd
+        icon: mdi:spray-bottle
+        name: Plastic
+type: vertical-stack

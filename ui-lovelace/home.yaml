@@ -1,0 +1,123 @@
+icon: 'mdi:home'
+panel: false
+path: default_view
+theme: midnight
+title: Home
+badges:
+  - entity: binary_sensor.updater
+  - entity: person.tom
+  - entity: person.wendy
+  - entity: person.beast
+  - entity: sun.sun
+cards:
+  - cards:
+      - entities:
+          - entity: light.cilinder_lamp
+          - entity: light.staande_lampen
+          - entity: switch.0x680ae2fffef05ba5_switch
+        title: Woonkamer
+        type: entities
+      - entities:
+          - entity: light.0x086bd7fffe2d179e_light
+        show_header_toggle: false
+        theme: midnight
+        title: Hobbykamer
+        type: entities
+      - entities:
+          - entity: light.0x680ae2fffeec0d99_light
+          - entity: light.shelly_1_light
+        show_header_toggle: false
+        theme: midnight
+        title: Keuken
+        type: entities
+      - entities:
+          - entity: binary_sensor.0x680ae2fffefb1058_occupancy
+          - entity: light.shelly_hal_light_1
+          - entity: light.shelly_hal_light_2
+        title: Hal
+        type: entities
+      - entities:
+          - entity: light.overloop_lamp
+          - entity: light.leds_maartje
+        title: 1e Verdieping
+        type: entities
+    type: vertical-stack
+
+  - entity: weather.huis_2
+    type: weather-forecast
+  - cards:
+      - color_thresholds:
+        - color: '#039BE5'
+          value: 10
+        - color: '#0da035'
+          value: 19
+        - color: '#e0b400'
+          value: 28
+        - color: '#e45e65'
+          value: 30
+        color_thresholds_transition: hard
+    #  - color_thresholds_transition: smooth
+        entities:
+        - entity: sensor.woonkamer_temperatuur
+          name: Woonkamer Temp
+          font_size: 100
+          group: false
+          hour24: true
+          line_width: 6
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: false
+            name: true
+            state: true
+        type: custom:mini-graph-card
+      - color_thresholds:
+        - color: '#039BE5'
+          value: 0
+        - color: '#0da035'
+          value: 35
+        - color: '#e0b400'
+          value: 60
+        - color: '#e45e65'
+          value: 80
+          color_thresholds_transition: hard
+    #  - color_thresholds_transition: smooth
+        entities:
+        - entity: sensor.woonkamer_luchtvochtigheid
+          name: Woonkamer Hum
+          font_size: 100
+          group: false
+          hour24: true
+          line_width: 6
+          points_per_hour: 1
+          show:
+            extrema: false
+            fill: fade
+            labels: false
+            name: true
+            state: true
+        type: custom:mini-graph-card
+    type: horizontal-stack
+  - cards:  
+      - entity: camera.buienradar_loop
+        type: picture-entity
+    type: vertical-stack
+#  - entities:
+#      - entity: switch.bw_shp6_01_relay
+#      - entity: sensor.bw_shp6_01_uptime
+#      - entity: sensor.bw_shp6_01_wattage
+#    type: entities
+  
+  - !include cards/ui-afvalinfo.yaml
+  - !include cards/skoda.yaml
+  - !include cards/printercard.yaml
+
+  - entities:
+    - entity: sensor.adguard_dns_queries_blocked_ratio
+    - entity: sensor.adguard_dns_queries_blocked
+    - entity: sensor.adguard_average_processing_speed
+    - entity: sensor.adguard_rules_count
+    title: AdGuard
+    type: entities
+

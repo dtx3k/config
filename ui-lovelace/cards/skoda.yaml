@@ -1,0 +1,103 @@
+cards:
+  - type: picture-elements
+    image: /local/images/bg/beast.jpg
+    style: | 
+      ha-card {
+        border-radius: 10px;
+        
+        
+        overflow: hidden;
+      } 
+    elements:
+  #  - type: image
+  #    image: /local/pictures/cardbackK.png
+  #    style:
+  #      left: 50%
+  #      top: 90%
+  #      width: 100%
+  #      height: 60px
+
+    - type: icon
+      icon: mdi:parking
+      entity: binary_sensor.g087fg_parking_brake
+      tap_action: more_info
+      style: {color: white, left: 10%, top: 86%}
+    - type: state-label
+      entity: binary_sensor.g087fg_parking_brake
+      style: {color: white, left: 10%, top: 95%}
+
+    - type: state-icon
+      entity: binary_sensor.g087fg_locked
+      tap_action: more_info
+      style: {color: white, left: 30%, top: 86%}
+    - type: state-label
+      entity: binary_sensor.g087fg_locked
+      style: {color: white, left: 30%, top: 95%}
+
+    - type: icon
+      icon: mdi:car-battery
+      entity: sensor.g087fg_battery
+      tap_action: more_info
+      style: {color: white, left: 50%, top: 86%}
+    - type: state-label
+      entity: sensor.g087fg_battery
+      style: {color: white, left: 50%, top: 95%}
+
+    - type: icon
+      icon: mdi:power
+      entity: binary_sensor.g087fg_ignition
+      tap_action: more_info
+      style: {color: white, left: 70%, top: 86%}
+    - type: state-label
+      entity: binary_sensor.g087fg_ignition
+      style: {color: white, left: 70%, top: 95%}
+
+    - type: icon
+      icon: mdi:speedometer
+      entity: sensor.g087fg_mileage
+      tap_action: more_info
+      style: {color: white, left: 90%, top: 86%}
+    - type: state-label
+      entity: sensor.g087fg_mileage
+      style: {color: white, left: 90%, top: 95%}
+
+    - type: custom:circle-sensor-card
+      entity: sensor.g087fg_fuel_left
+      max: 100
+      min: 0
+      stroke_width: 15
+      gradient: true
+      fill: '#aaaaaabb'
+      name: tank
+      units: ' '
+      font_style:
+        font-size: 1.0em
+        font-color: white
+        text-shadow: '1px 1px black'
+      style:
+        top: 5%
+        left: 80%
+        width: 4em
+        height: 4em
+        transform: none
+
+    - type: custom:circle-sensor-card
+      entity: sensor.g087fg_mileage_left
+      max: 630
+      min: 0
+      stroke_width: 15
+      gradient: true
+      fill: '#aaaaaabb'
+      name: range
+      units: ' '
+      font_style:
+        font-size: 1.0em
+        font-color: white
+        text-shadow: '1px 1px black'
+      style:
+        top: 5%
+        left: 5%
+        width: 4em
+        height: 4em
+        transform: none
+type: vertical-stack

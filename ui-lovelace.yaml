@@ -1,0 +1,18 @@
+button_card_templates:
+  !include_dir_merge_named ui-lovelace/cbc-templates
+
+
+background: var(--background-image)
+custom_header:
+  background: 'rgba(155, 155, 155, 0.25)'
+  compact_mode: true
+  button_text:
+    options: ':'
+title: Huis
+views:
+  - !include ui-lovelace/home.yaml
+  - !include ui-lovelace/lights.yaml
+  - !include ui-lovelace/Shellys.yaml
+  - !include ui-lovelace/love-zbmap.yaml
+  - !include ui-lovelace/batt_levels.yaml
+

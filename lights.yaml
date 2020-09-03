@@ -1,0 +1,11 @@
+- platform: group
+  name: Staande Lampen
+  entities:
+    - light.0x680ae2fffec2300f_light
+    - light.0x680ae2fffea8cd3e_light
+
+- platform : group
+  name: Cilinder lamp
+  entities:
+    - light.0x680ae2fffe91ba51_light
+    - light.0x680ae2fffe447f09_light

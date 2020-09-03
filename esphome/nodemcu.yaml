@@ -1,0 +1,50 @@
+esphome:
+  name: nodemcu
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: !secret ssid1
+  password: !secret ssid1_pass
+  manual_ip:
+    static_ip: !secret esphome_nodemcu_static_ip
+    gateway: !secret wifi_gateway
+    subnet: !secret wifi_subnet
+    dns1: !secret wifi_dns1
+    dns2: !secret wifi_dns2
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Nodemcu Fallback Hotspot"
+    password: "p9Hs1gbKyWD3"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+sensor:
+ - platform: dht
+   pin: D7
+   temperature:
+     name: "Woonkamer Temperatuur"
+   humidity:
+     name: "Woonkamer Luchtvochtigheid"
+   model: AM2302
+   update_interval: 20s
+   
+remote_receiver:
+  pin:
+    number: D4
+    inverted: yes
+    mode: INPUT_PULLUP
+  dump: rc_switch
+  tolerance: 50%
+  filter: 400us
+  idle: 4ms
+  buffer_size: 2kb

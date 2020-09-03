@@ -1,0 +1,30 @@
+---
+# type: vertical-stack
+cards:
+  - entities:
+      - sensor.shelly_hal_active_power_a
+      - sensor.shelly_hal_active_power_b
+      - sensor.shelly_hal_current_a
+      - sensor.shelly_hal_current_b
+      - switch.shelly_hal_relay1
+      - switch.shelly_hal_relay2
+      - binary_sensor.shelly_hal_switch1
+      - binary_sensor.shelly_hal_switch2
+      - sensor.shelly_hal_temperature
+      - sensor.shelly_hal_voltage
+    title: Shelly Hal  
+    type: entities
+  - entities:
+      - sensor.shelly_overloop_active_power_a
+      - sensor.shelly_overloop_active_power_b
+      - sensor.shelly_overloop_current_a
+      - sensor.shelly_overloop_current_b
+      - switch.shelly_overloop_relay1
+      - switch.shelly_overloop_relay2
+      - binary_sensor.shelly_overloop_switch1
+      - binary_sensor.shelly_overloop_switch2
+      - sensor.shelly_overloop_temperature
+      - sensor.shelly_overloop_voltage
+    title: Shelly overloop
+    type: entities
+title: Shelly

@@ -1,0 +1,6 @@
+mind:
+  username: !secret mindusr
+  password: !secret mindpass
+  # Skoda:
+  client_id: c030ad63a0e4433d86e4a36fc4047ce2
+  client_secret: E97F8294804c49Cd83b0b9f0552577B2

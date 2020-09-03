@@ -1,0 +1,26 @@
+  - url: /hacsfiles/zigbee2mqtt-networkmap/zigbee2mqtt-networkmap.js
+    type: module
+  - url: /hacsfiles/custom-header/custom-header.js
+    type: module
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module
+  - url: /hacsfiles/lovelace-battery-entity/battery-entity.js
+    type: module
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
+  - url: /hacsfiles/lovelace-card-templater/lovelace-card-templater.js
+    type: js
+  - url: https://cdn.jsdelivr.net/npm/rgb-light-card
+    type: js
+#  - url: /hacsfiles/Home-Assistant-Lovelace-HTML-Jinja2-Template-card/html-template-card.js
+#    type: js
+  - url: /hacsfiles/button-card/button-card.js
+    type: module
+  - url: /hacsfiles/light-entity-card/light-entity-card.js
+    type: module
+  - url: /hacsfiles/light-popup-card/light-popup-card.js
+    type: module
+  - url: /browser_mod.js
+    type: module
+  - url: /hacsfiles/circle-sensor-card/circle-sensor-card.js
+    type: module

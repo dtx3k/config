@@ -1,0 +1,5 @@
+weather:
+  - platform: buienradar
+
+camera:
+  - platform: buienradar

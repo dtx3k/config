@@ -1,0 +1,12 @@
+# sensor:  
+#  - platform: template
+#    sensors:
+#      template_last_motion:
+#        friendly_name: 'Motion'
+#        icon_template: 'mdi:walk'
+#        entity_id:
+#          - binary_sensor.0x680ae2fffefb1058_occupancy
+#        value_template: >
+#          {% set allmotion = states | selectattr('entity_id', 'in', state_attr('group.motion', 'entity_id')) | list %}
+#          {% set open= allmotion | map(attribute='last_changed') | list |max %}
+#          {{allmotion |selectattr('last_changed','eq', open)|map(attribute='name')|list|join}} ({{allmotion |selectattr('last_changed','eq', open)|map(attribute='state')|list|join}}) on {{ as_timestamp(open) | timestamp_custom('%d/%m/%Y at %-Hh%M') }}

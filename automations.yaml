@@ -1,0 +1,31 @@
+-   alias: Alert if and which container needs to go out tomorrow
+    trigger: 
+      platform: time 
+      at: '20:00:00'
+    condition:
+      condition: not
+      conditions:
+        - condition: state
+          entity_id: sensor.afvalinfo_tomorrow
+          state: none
+    action: 
+      - service: notify.HomeNotifier
+        data_template:
+          message: >
+            Morgen moet de {{ states('sensor.afvalinfo_tomorrow') }} container aan straat, lamme!
+
+-   alias: Alert if and which container needs to go out today
+    trigger: 
+      platform: time 
+      at: '07:30:00'
+    condition:
+      condition: not
+      conditions:
+        - condition: state
+          entity_id: sensor.afvalinfo_today
+          state: none
+    action: 
+      - service: notify.HomeNotifier
+        data_template:
+          message: >
+            NU moet de {{ states('sensor.afvalinfo_today') }} container aan straat, wakker worden!

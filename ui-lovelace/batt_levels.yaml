@@ -1,0 +1,10 @@
+title: Batteries
+icon: mdi:battery-charging-90
+
+cards:
+  - cards:
+    - type: custom:battery-entity
+      entity: sensor.0x680ae2fffeadb46c_battery
+    - type: custom:battery-entity
+      entity: sensor.0x000d6ffffe49c8d1_battery
+    type: horizontal-stack

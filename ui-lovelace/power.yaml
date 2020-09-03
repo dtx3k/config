@@ -1,0 +1,21 @@
+icon: 'mdi:power'
+panel: false
+path: power
+theme: midnight
+title: Power 
+badges: []
+cards:
+  - entity: sensor.bw6_01_energy_power
+    max: 2000
+    min: 0
+    theme: midnight
+    type: gauge
+  - entity: sensor.bw6_01_energy_today
+    max: 1
+    min: 0
+    theme: default
+    type: gauge
+  - entity: sensor.bw6_01_energy_voltage
+    type: sensor
+  - entity: sensor.bw6_01_energy_current
+    type: sensor

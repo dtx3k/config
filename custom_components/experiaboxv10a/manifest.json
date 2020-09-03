@@ -1,0 +1,11 @@
+{
+    "domain": "experiaboxv10a",
+    "name": "experiaboxv10a",
+    "documentation": "https://github.com/FrankZZ/homeassistant-experiabox-v10a",
+    "requirements": [],
+    "dependencies": [],
+    "codeowners": [
+        "@FrankZZ",
+        "@kadima-tech"
+    ]
+}

@@ -1,0 +1,50 @@
+icon: 'mdi:lamp'
+path: lampen
+theme: midnight
+title: Lampen
+badges: []
+cards:
+  - cards:
+      - cards:
+        - type: custom:button-card
+          entity: light.staande_lampen
+          template: ['base','light','bulb']
+        - type: custom:button-card
+          entity: light.cilinder_lamp
+          template: ['base','light','bulb']
+        - type: custom:button-card
+          entity: light.0x086bd7fffe2d179e_light  # Lamp hoek
+          template: ['base','light','bulb']
+        - type: custom:button-card
+          entity: switch.0x680ae2fffef05ba5_switch # Kooi Lamp
+          template: ['base','light','bulb']
+        type: horizontal-stack
+
+      - cards:
+        - type: custom:button-card
+          entity: light.shelly_1_light #keuken lamp
+          template: ['base','light','spot']
+        - type: custom:button-card
+          entity: light.0x680ae2fffeec0d99_light #keukenkastjes
+          template: ['base','light','bulb']  
+        - type: custom:button-card
+          entity: light.shelly_hal_light_1 #Hal
+          template: ['base','light','spot']
+        - type: custom:button-card
+          entity: light.overloop_lamp # overloop
+          template: ['base','light','spot']
+        type: horizontal-stack
+
+      - cards:
+        - type: custom:button-card
+          entity: light.shelly_hal_light_2 # buitenlamp voor
+          template: ['base','light','bulb']
+        - type: custom:button-card
+          entity: light.ws281b_maartje # ledstrip Maartje
+          template: ['base','light','bulb']
+        - type: custom:button-card
+          color_type: blank-card
+        - type: custom:button-card
+          color_type: blank-card
+        type: horizontal-stack
+    type: vertical-stack

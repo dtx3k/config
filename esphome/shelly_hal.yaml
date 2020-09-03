@@ -1,0 +1,109 @@
+substitutions:
+  devicename: shelly_hal
+
+esphome:
+  name: ${devicename}
+  platform: ESP8266
+  board: esp01_1m
+
+<<: !include common/tmpl_wifi.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+i2c:
+  sda: GPIO12
+  scl: GPIO14
+
+sensor:
+  - platform: ade7953
+    voltage:
+      name: ${devicename} Voltage
+    current_a:
+      name: ${devicename} Current B
+    current_b:
+      name: ${devicename} Current A
+    active_power_a:
+      name: ${devicename} Active Power B
+      filters:
+        - multiply: -1
+    active_power_b:
+      name: ${devicename} Active Power A
+      filters:
+        - multiply: -1
+    update_interval: 60s
+
+  # NTC Temperature
+  - platform: ntc
+    sensor: temp_resistance_reading
+    name: ${devicename} Temperature
+    unit_of_measurement: "°C"
+    accuracy_decimals: 1
+    icon: "mdi:thermometer"
+    calibration:
+      b_constant: 3350
+      reference_resistance: 10kOhm
+      reference_temperature: 298.15K
+  - platform: resistance
+    id: temp_resistance_reading
+    sensor: temp_analog_reading
+    configuration: DOWNSTREAM
+    resistor: 32kOhm
+  - platform: adc
+    id: temp_analog_reading
+    pin: A0
+
+status_led:
+  pin:
+    number: GPIO0
+    inverted: yes
+
+
+output:
+  - platform: gpio
+    pin: GPIO4
+    id: shelly_25_relay_1
+  - platform: gpio
+    pin: GPIO15
+    id: shelly_25_relay_2
+
+light:
+  - platform: binary
+    name: "${devicename} Light 1"
+    output: shelly_25_relay_1
+    id: lightid1
+  - platform: binary
+    name: "${devicename} Light 2"
+    output: shelly_25_relay_2
+    id: lightid2
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO13
+      #mode: INPUT_PULLUP
+      #inverted: True
+    name: "${devicename} Switch 1"
+    on_state:
+      then:
+        - light.toggle: lightid1
+    internal: true
+    id: switchid1
+  - platform: gpio
+    pin:
+      number: GPIO5
+      #mode: INPUT_PULLUP
+      #inverted: True
+    name: "${devicename} Switch 2"
+    on_state:
+      then:
+        - light.toggle: lightid2
+    internal: true
+    id: switchid2
