@@ -112,7 +112,15 @@ cards:
   - !include cards/ui-afvalinfo.yaml
   - !include cards/skoda.yaml
   - !include cards/printercard.yaml
-
+  - type: horizontal-stack
+    cards:
+      - entity: media_player.musicbox
+        type: custom:mini-media-player
+        info: short
+        artwork: cover
+        hide:
+          mute: true
+          icon: true
   - entities:
     - entity: sensor.adguard_dns_queries_blocked_ratio
     - entity: sensor.adguard_dns_queries_blocked
