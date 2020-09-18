@@ -4,7 +4,7 @@
     type: module
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
     type: module
-  - url: /hacsfiles/lovelace-battery-entity/battery-entity.js
+  - url: /hacsfiles/battery-state-card/battery-state-card.js
     type: module
   - url: /hacsfiles/lovelace-card-mod/card-mod.js
     type: module

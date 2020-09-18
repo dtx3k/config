@@ -18,7 +18,7 @@ cards:
         title: Woonkamer
         type: entities
       - entities:
-          - entity: light.0x086bd7fffe2d179e_light
+          - entity: light.hoeklamp_light
         show_header_toggle: false
         theme: midnight
         title: Hobbykamer
@@ -112,15 +112,13 @@ cards:
   - !include cards/ui-afvalinfo.yaml
   - !include cards/skoda.yaml
   - !include cards/printercard.yaml
-  - type: horizontal-stack
+  - type: vertical-stack
     cards:
       - entity: media_player.musicbox
-        type: custom:mini-media-player
-        info: short
+        type: media-control
+      - entity: media_player.spotify_tom_soer
+        type: media-control
         artwork: cover
-        hide:
-          mute: true
-          icon: true
   - entities:
     - entity: sensor.adguard_dns_queries_blocked_ratio
     - entity: sensor.adguard_dns_queries_blocked

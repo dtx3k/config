@@ -1,0 +1,74 @@
+icon: 'mdi:cloud'
+path: weather
+# theme: midnight
+title: Weer
+badges: []
+cards:
+  - cards:
+      - cards:
+        type: custom:ha-card-weather-conditions
+        name: "cc_test"
+        language: nl
+        animation: true
+        weather:
+          icons_model: climacell
+          forecast:
+            
+            icons:
+              day_1: "{{ state_attr("weather.huis", "forecast")[0].condition }}"
+              day_2: "{{ state_attr("weather.huis", "forecast")[1].condition }}"
+              day_3: "{{ state_attr('weather.huis', 'forecast')[2].condition }}"
+              day_4: "{{ state_attr('weather.huis', 'forecast')[3].condition }}"
+              day_5: "{{ state_attr('weather.huis', 'forecast')[4].condition }}"
+#           temperature_high:
+#             day_1: sensor.cc_test_temperature_max_0d
+#             day_2: sensor.cc_test_temperature_max_1d
+#             day_3: sensor.cc_test_temperature_max_2d
+#             day_4: sensor.cc_test_temperature_max_3d
+#             day_5: sensor.cc_test_temperature_max_4d
+#           temperature_low:
+#             day_1: sensor.cc_test_temperature_min_0d
+#             day_2: sensor.cc_test_temperature_min_1d
+#             day_3: sensor.cc_test_temperature_min_2d
+#             day_4: sensor.cc_test_temperature_min_3d
+#             day_5: sensor.cc_test_temperature_min_4d
+#           precipitation_probability:
+#             day_1: sensor.cc_test_precipitation_probability_0d
+#             day_2: sensor.cc_test_precipitation_probability_1d
+#             day_3: sensor.cc_test_precipitation_probability_2d
+#             day_4: sensor.cc_test_precipitation_probability_3d
+#             day_5: sensor.cc_test_precipitation_probability_4d
+#           precipitation_intensity:
+#             day_1: sensor.cc_test_precipitation_max_0d
+#             day_2: sensor.cc_test_precipitation_max_1d
+#             day_3: sensor.cc_test_precipitation_max_2d
+#             day_4: sensor.cc_test_precipitation_max_3d
+#             day_5: sensor.cc_test_precipitation_max_4d
+#     - cards:
+#       - type: custom:button-card
+#         entity: light.shelly_1_light #keuken lamp
+#         template: ['base','light','spot']
+#       - type: custom:button-card
+#         entity: light.0x680ae2fffeec0d99_light #keukenkastjes
+#         template: ['base','light','bulb']  
+#       - type: custom:button-card
+#         entity: light.shelly_hal_light_1 #Hal
+#         template: ['base','light','spot']
+#       - type: custom:button-card
+#         entity: light.overloop_lamp # overloop
+#         template: ['base','light','spot']
+#       type: horizontal-stack
+#
+#     - cards:
+#       - type: custom:button-card
+#         entity: light.shelly_hal_light_2 # buitenlamp voor
+#         template: ['base','light','bulb']
+#       - type: custom:button-card
+#         entity: light.ws281b_maartje # ledstrip Maartje
+#         template: ['base','light','bulb']
+#       - type: custom:button-card
+#         color_type: blank-card
+#       - type: custom:button-card
+#         color_type: blank-card
+#       type: horizontal-stack
+    type: vertical-stack

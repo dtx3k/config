@@ -27,6 +27,8 @@ logger:
 
 homeassistant:
   packages: !include_dir_named packages
+  media_dirs:
+    music: /share/music
 
 browser_mod:
 prometheus:

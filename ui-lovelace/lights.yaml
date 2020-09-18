@@ -13,7 +13,7 @@ cards:
           entity: light.cilinder_lamp
           template: ['base','light','bulb']
         - type: custom:button-card
-          entity: light.0x086bd7fffe2d179e_light  # Lamp hoek
+          entity: light.hoeklamp_light  # Lamp hoek
           template: ['base','light','bulb']
         - type: custom:button-card
           entity: switch.0x680ae2fffef05ba5_switch # Kooi Lamp

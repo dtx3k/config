@@ -12,6 +12,7 @@ title: Huis
 views:
   - !include ui-lovelace/home.yaml
   - !include ui-lovelace/lights.yaml
+#  - !include ui-lovelace/weather.yaml
   - !include ui-lovelace/Shellys.yaml
   - !include ui-lovelace/love-zbmap.yaml
   - !include ui-lovelace/batt_levels.yaml
