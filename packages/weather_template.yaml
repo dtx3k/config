@@ -1,0 +1,51 @@
+sensor:
+  - platform: template
+    sensors:
+      wcurrenttemp:
+        friendly_name: "current temperature"
+        value_template: "{{ state_attr('weather.huis', 'forecast')[0].temperature }}"
+      forecastmaxt0: 
+        friendly_name: "Forecast temp 0"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[0].temperature }}"
+      forecastmaxt1: 
+        friendly_name: "Forecast temp 1"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[1].temperature }}"
+      forecastmaxt2: 
+        friendly_name: "Forecast temp 2"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[2].temperature }}"
+      forecastmaxt3: 
+        friendly_name: "Forecast temp 3" 
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[3].temperature }}"
+      forecastmaxt4: 
+        friendly_name: "Forecast temp 4"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[4].temperature }}"
+      forecastlowt0: 
+        friendly_name: "Forecast temp low 0"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[0].temperature }}"
+      forecastlowt1: 
+        friendly_name: "Forecast temp low 1"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[1].templow }}"
+      forecastlowt2: 
+        friendly_name: "Forecast temp low 2"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[2].templow }}"
+      forecastlowt3: 
+        friendly_name: "Forecast temp low 3" 
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[3].templow }}"
+      forecastlowt4: 
+        friendly_name: "Forecast temp low 4"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[4].templow }}"        
+      forecasticon0:
+        friendly_name: "Forecast icons 0"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[0].condition }}"
+      forecasticon1:
+        friendly_name: "Forecast icons 1"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[1].condition }}"
+      forecasticon2:
+        friendly_name: "Forecast icons 2"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[2].condition }}"
+      forecasticon3:
+        friendly_name: "Forecast icons 3"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[3].condition }}" 
+      forecasticon4:
+        friendly_name: "Forecast icons 4"
+        value_template: "{{ state_attr('weather.huis_2', 'forecast')[4].condition }}" 

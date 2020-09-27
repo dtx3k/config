@@ -45,4 +45,4 @@ mind.conf
 # Specific keeps
 !.gitkeep
 
-image/**
+image/**/
