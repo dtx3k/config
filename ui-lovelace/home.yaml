@@ -12,17 +12,18 @@ badges:
 cards:
   - cards:
       - entities:
-          - entity: light.cilinder_lamp
           - entity: light.staande_lampen
           - entity: switch.0x680ae2fffef05ba5_switch
+          - entity: light.hoeklamp_light
+          - entity: light.eettafel_hanglampen
         title: Woonkamer
         type: entities
-      - entities:
-          - entity: light.hoeklamp_light
-        show_header_toggle: false
-        theme: midnight
-        title: Hobbykamer
-        type: entities
+#      - entities:
+#
+#        show_header_toggle: false
+#        theme: midnight
+#        title: Hobbykamer
+#        type: entities
       - entities:
           - entity: light.0x680ae2fffeec0d99_light
           - entity: light.shelly_1_light
@@ -40,6 +41,10 @@ cards:
           - entity: light.overloop_lamp
           - entity: light.leds_maartje
         title: 1e Verdieping
+        type: entities
+      - entities:
+          - entity: light.cilinder_lamp
+        title: Zolder  
         type: entities
     type: vertical-stack
 
@@ -59,7 +64,7 @@ cards:
     #  - color_thresholds_transition: smooth
         entities:
         - entity: sensor.woonkamer_temperatuur
-          name: Woonkamer Temp
+          name: Hobbykamer Temp
           font_size: 100
           group: false
           hour24: true
@@ -85,7 +90,7 @@ cards:
     #  - color_thresholds_transition: smooth
         entities:
         - entity: sensor.woonkamer_luchtvochtigheid
-          name: Woonkamer Hum
+          name: hobbykamer Hum
           font_size: 100
           group: false
           hour24: true

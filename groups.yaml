@@ -1,5 +1,12 @@
 woonkamer:
   name: Woonkamer
   entities:
-    - light.cilinder_lamp
+  #  - light.cilinder_lamp
     - light.staande_lampen
+
+alarm_clock:
+  name: "Wake-up Lights"
+  entities: # Add all entities here that should be part of the widget
+    - input_datetime.wakeup_time
+    - input_boolean.wakeup_enabled
+    - input_boolean.wakeup_weekend

@@ -9,3 +9,9 @@
   entities:
     - light.0x680ae2fffe91ba51_light
     - light.0x680ae2fffe447f09_light
+
+- platform: group
+  name: Eettafel Hanglampen
+  entities:
+    - light.eettafellinks_light
+    - light.eettafelrechts_light

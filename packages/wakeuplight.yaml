@@ -1,0 +1,16 @@
+input_boolean :
+  wakeup_enabled:
+    name: "Wake-up lights"
+    initial: on
+    icon: mdi:theme-light-dark
+  wakeup_weekend:
+    name: "Enable Wake-up on weekends"
+    initial: off # I disable the system on default on weekends
+    icon: mdi:calendar-blank
+
+input_datetime:
+  wakeup_time:
+    name: "Start lights at"
+    has_time: true
+    has_date: false
+    initial: "07:20"

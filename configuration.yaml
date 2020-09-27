@@ -26,6 +26,8 @@ logger:
   default: info
 
 homeassistant:
+  external_url: !secret exturl
+  internal_url: !secret inturl
   packages: !include_dir_named packages
   media_dirs:
     music: /share/music
